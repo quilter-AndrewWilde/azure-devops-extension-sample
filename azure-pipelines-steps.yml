@@ -10,4 +10,11 @@ steps:
 
 - script: |
     npm run build
+    cp $(Build.SourcesDirectory)/*.vsix $(Build.ArtifactStagingDirectory)
   displayName: 'Compile and package'
+
+- task: PublishBuildArtifacts@1
+  inputs:
+    PathtoPublish: '$(Build.ArtifactStagingDirectory)'
+    ArtifactName: 'ado-extension'
+    publishLocation: 'Container'
