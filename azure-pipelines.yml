@@ -8,9 +8,8 @@ jobs:
   steps:
   - template: azure-pipelines-steps.yml
 
-- job: Windows
-  pool:
-    vmImage: 'windows-latest'
-  steps:
-  - template: azure-pipelines-steps.yml
-  
+# - job: Windows
+#   pool:
+#     vmImage: 'windows-latest'
+#   steps:
+#   - template: azure-pipelines-steps.yml
